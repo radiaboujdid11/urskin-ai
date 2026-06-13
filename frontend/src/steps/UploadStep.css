@@ -1,0 +1,118 @@
+/* ── Page ────────────────────────────────────────────────────────────────── */
+.up-page {
+  min-height: calc(100vh - 64px);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+
+/* ── Animated blobs ──────────────────────────────────────────────────────── */
+.up-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+
+.up-blob {
+  position: absolute; border-radius: 50%;
+  filter: blur(90px); opacity: .55;
+}
+.up-blob-1 {
+  width: 560px; height: 560px;
+  background: radial-gradient(circle, #FCE8F0, #EDD8E4);
+  top: -160px; left: -180px;
+  animation: blob-drift 9s ease-in-out infinite;
+}
+.up-blob-2 {
+  width: 440px; height: 440px;
+  background: radial-gradient(circle, #EDD8E4, #FDF4F7);
+  bottom: -120px; right: -120px;
+  animation: blob-drift 12s ease-in-out infinite reverse;
+}
+.up-blob-3 {
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, #FCE8F0 40%, transparent);
+  top: 50%; left: 55%; transform: translate(-50%, -50%);
+  animation: blob-pulse 7s ease-in-out infinite;
+}
+
+@keyframes blob-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -20px) scale(1.04); }
+  66%       { transform: translate(-20px, 15px) scale(.97); }
+}
+@keyframes blob-pulse {
+  0%, 100% { opacity: .4; transform: translate(-50%, -50%) scale(1); }
+  50%       { opacity: .7; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* ── Inner grid ──────────────────────────────────────────────────────────── */
+.up-inner {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 72px; align-items: center;
+  max-width: 980px; width: 100%; padding: 0 48px;
+}
+@media (max-width: 860px) {
+  .up-inner { grid-template-columns: 1fr; gap: 40px; padding: 40px 24px; }
+}
+
+/* ── Hero text ───────────────────────────────────────────────────────────── */
+.up-title {
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.08; margin: 12px 0 18px;
+}
+.up-sub {
+  font-size: 15px; color: var(--muted); line-height: 1.75;
+  max-width: 380px; margin-bottom: 24px;
+}
+
+.up-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+.up-badge {
+  font-size: 12px; font-weight: 700; letter-spacing: .4px;
+  border: 1.5px solid var(--border); border-radius: 20px;
+  padding: 4px 12px; color: var(--muted);
+  background: var(--bg2);
+}
+
+/* ── Card wrapper (3D) ───────────────────────────────────────────────────── */
+.up-card-wrap {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ── Drop zone ───────────────────────────────────────────────────────────── */
+.up-dropzone {
+  background: var(--bg2);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 64px 40px;
+  text-align: center; cursor: pointer;
+  transition: border-color .25s, background .25s;
+  box-shadow: 0 8px 32px rgba(196,25,79,.06);
+}
+.up-dropzone:hover, .up-dragging {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.up-drop-icon {
+  color: var(--accent); margin-bottom: 20px;
+  display: inline-block;
+}
+.up-drop-label {
+  font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 6px;
+}
+.up-drop-hint { font-size: 13px; color: var(--muted); }
+
+/* ── Preview ─────────────────────────────────────────────────────────────── */
+.up-preview {
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 12px 48px rgba(196,25,79,.12);
+}
+.up-preview img {
+  width: 100%; display: block;
+  max-height: 340px; object-fit: cover;
+}
+.up-preview-actions {
+  display: flex; gap: 10px; padding: 14px 16px;
+  background: var(--bg2); border-top: 1px solid var(--border);
+}
+
+/* ── Nav reset button ────────────────────────────────────────────────────── */
+.nav-reset { font-size: 13px; }

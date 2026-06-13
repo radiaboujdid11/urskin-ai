@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.env
+venv/
+*.keras
+
+# Model weights (large — managed via Git LFS in deploy/hf-space/)
+*.h5
+!deploy/hf-space/models/*.h5
+
+# Training artifacts (large files — not needed for the app)
+skin-analyzer-train/
+data/
+
+# Claude internal
+.claude/
+
+# Logs / OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Node (frontend has its own .gitignore)
+node_modules/
+dist/
+
+# Auth secrets & user data (never commit)
+backend/.auth_secret
+backend/users.json

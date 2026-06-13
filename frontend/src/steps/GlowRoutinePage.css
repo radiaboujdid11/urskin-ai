@@ -1,0 +1,65 @@
+/* ══ Glow Routine Standalone Page — Petal OS ═════════════════════════ */
+.grp-page {
+  min-height: 100vh;
+  padding: 0 24px 80px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Nav */
+.grp-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 0; border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.grp-back {
+  font-size: 13px; font-weight: 600; color: var(--text-muted);
+  background: none; border: none; cursor: pointer; padding: 6px 0;
+  transition: color 0.2s;
+}
+.grp-back:hover { color: var(--primary); }
+.grp-nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-weight: 700; font-style: italic;
+  color: var(--primary);
+}
+
+.grp-hero {
+  text-align: center;
+  padding: 40px 0 8px;
+}
+
+.grp-eyebrow {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1.2px; color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.grp-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700; line-height: 1.15;
+  color: var(--text); letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.grp-accent {
+  color: var(--primary); font-style: italic;
+}
+
+.grp-sub {
+  font-size: 15px; color: var(--text-body);
+  line-height: 1.65; max-width: 540px; margin: 0 auto 8px;
+}
+
+.grp-content {
+  margin-top: 8px;
+}
+
+/* Override section styles when standalone — no top border */
+.grp-content .glow-section {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}

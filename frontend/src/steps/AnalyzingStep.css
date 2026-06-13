@@ -1,0 +1,92 @@
+/* ══ Analyzing — Petal OS ════════════════════════════════════════════ */
+.analyzing-page {
+  min-height: 80vh; display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; background: var(--bg);
+}
+
+.analyzing-page .blob {
+  position: absolute; border-radius: 50%; pointer-events: none;
+}
+.analyzing-page .blob-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(244,185,196,0.30) 0%, transparent 65%);
+  top: -100px; right: 5%; filter: blur(60px);
+  animation: blob-drift 9s ease-in-out infinite;
+}
+.analyzing-page .blob-2 {
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgba(155,132,209,0.18) 0%, transparent 65%);
+  bottom: -60px; left: 5%; filter: blur(60px);
+  animation: blob-drift 12s ease-in-out infinite reverse;
+}
+@keyframes blob-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(16px, -20px) scale(1.04); }
+}
+
+.analyzing-inner {
+  text-align: center; z-index: 1;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+/* 3D rose × lavender orbit rings */
+.pulse-ring {
+  width: 100px; height: 100px; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 44px;
+}
+.pulse-ring::before {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--primary);
+  border-left-color: rgba(212,88,123,0.22);
+  animation: orbit-cw 1.8s linear infinite;
+}
+.pulse-ring::after {
+  content: ''; position: absolute; inset: 14px; border-radius: 50%;
+  border: 2px solid transparent;
+  border-bottom-color: var(--accent);
+  border-right-color: rgba(155,132,209,0.22);
+  animation: orbit-ccw 1.2s linear infinite;
+}
+.pulse-dot {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #F5A0BB, var(--primary));
+  box-shadow: 0 0 22px var(--primary-glow), 0 0 44px rgba(212,88,123,0.10);
+  animation: dot-breathe 2.4s ease-in-out infinite;
+}
+@keyframes orbit-cw  { to { transform: rotate(360deg); } }
+@keyframes orbit-ccw { to { transform: rotate(-360deg); } }
+@keyframes dot-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.82); box-shadow: 0 0 30px var(--primary-glow); }
+}
+
+.analyzing-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px; font-weight: 600; font-style: italic;
+  color: var(--text); margin-bottom: 8px; letter-spacing: -0.02em;
+}
+.analyzing-sub { font-size: 15px; color: var(--text-body); margin-bottom: 44px; }
+
+.analyzing-steps {
+  display: flex; flex-direction: column; gap: 12px;
+  max-width: 290px; margin: 0 auto; text-align: left;
+}
+.astep {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 13px; color: var(--text-body);
+  opacity: 0; animation: fadein-petal 0.6s ease forwards;
+  padding: 9px 18px; border-radius: 99px;
+  background: var(--bg-surface); border: 1.5px solid var(--border);
+  box-shadow: 0 2px 12px rgba(212,88,123,0.05);
+}
+@keyframes fadein-petal {
+  from { opacity: 0; transform: translateX(-14px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.astep-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  flex-shrink: 0; box-shadow: 0 0 8px var(--primary-glow);
+}
