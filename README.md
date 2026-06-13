@@ -143,32 +143,6 @@ urskin-ai/
 
 ---
 
-## Adding Screenshots
-
-Screenshots make your README much more attractive. Here's how to add them:
-
-**Step 1 — Take screenshots**
-- Take a screenshot of each main screen (Windows: `Win + Shift + S`, then save as PNG)
-- Save them in a folder, e.g. `screenshots/`
-
-**Step 2 — Upload to GitHub**
-- Go to your repo: https://github.com/radiaboujdid11/urskin-ai
-- Click **"Add file" → "Upload files"**
-- Drag your PNG files into the `screenshots/` folder (create it by typing `screenshots/` in the path)
-- Commit the upload
-
-**Step 3 — Add to README**
-Replace the placeholder above with:
-```markdown
-## Screenshots
-
-| Landing Page | Skin Analysis | Glow Routine |
-|---|---|---|
-| ![Landing](screenshots/landing.png) | ![Result](screenshots/result.png) | ![Routine](screenshots/routine.png) |
-```
-
----
-
 ## Disclaimer
 
 For informational purposes only. Does not replace professional medical or dermatological advice.
