@@ -8,7 +8,13 @@ Detect your skin condition from a photo using MobileNetV2 (80.18% accuracy), ide
 
 ## Screenshots
 
-<!-- Add screenshots here — see "Adding Screenshots" section below -->
+| Landing Page | Routine Card |
+|---|---|
+| ![Landing](screenshots/landing.png) | ![Routine](screenshots/landing-routine.png) |
+
+| Mild Acne — 54.4% confidence | Severe Acne — 97.7% confidence |
+|---|---|
+| ![Mild](screenshots/result-mild.png) | ![Severe](screenshots/result-severe.png) |
 
 ---
 
