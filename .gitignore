@@ -30,3 +30,9 @@ dist/
 # Auth secrets & user data (never commit)
 backend/.auth_secret
 backend/users.json
+# Local scripts
+restart_backend.bat
+start_frontend.bat
+# Claude internal
+CLAUDE.md
+SKILLS.md
